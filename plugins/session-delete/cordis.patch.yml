@@ -1,0 +1,16 @@
+# Bundle patch for out-of-tree installs of this plugin.
+#
+# Installed into a profile (`dsh plugin --profile web add
+# @dookoi/dsh-client-ui-session-delete`), this file is applied as the package's
+# own layer and registers the single Loader row that mounts the plugin: the
+# host half (`lib/index.js`) occupies the row, and `dsh.client` in package.json
+# is what makes the browser half (`lib/client.js`) discoverable.
+#
+# `inject: [connection]` waits for the HTTP connection service before applying,
+# otherwise the `/api/session-delete` route registration would fail on a
+# missing service.
+- insert:
+    - id: ui-session-delete
+      name: '@dookoi/dsh-client-ui-session-delete'
+      inject: [connection]
+      config: {}

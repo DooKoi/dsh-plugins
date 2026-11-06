@@ -12,6 +12,7 @@
 | 插件 | 包名 | 功能 | 平台 |
 |---|---|---|---|
 | [edit-message](plugins/edit-message) | `@dookoi/dsh-client-ui-edit-message` | 编辑已发送的用户消息，并从该条重新开始对话 | web |
+| [session-delete](plugins/session-delete) | `@dookoi/dsh-client-ui-session-delete` | 真正删除会话：日志、投影缓存、侧栏记账一起清掉（附件保留），支持 `⌘⌫` | web |
 
 ## 安装
 
@@ -37,6 +38,7 @@ cat ~/.dsh/profiles/web/package.json    # dsh.profile.bundles 里应出现对应
 
 ```sh
 dsh plugin --profile web remove @dookoi/dsh-client-ui-edit-message
+dsh plugin --profile web remove @dookoi/dsh-client-ui-session-delete
 ```
 
 ## 分享给朋友

@@ -1,0 +1,56 @@
+{
+  "name": "@dookoi/dsh-client-ui-session-delete",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness 插件：在侧栏会话菜单里加「删除会话」，连同会话日志、投影缓存与侧栏记账一起删掉（附件保持不动）。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": [
+        "./cordis.patch.yml"
+      ]
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/paths.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "session",
+    "delete"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DooKoi/dsh-plugins.git",
+    "directory": "plugins/session-delete"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.19"
+  },
+  "license": "MIT"
+}
